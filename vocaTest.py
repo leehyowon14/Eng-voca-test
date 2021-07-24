@@ -13,7 +13,7 @@ def isin(t,a):
             return True
     return False
 
-test_type = Config.voca_test_type #가독성을 높이기 위함
+test_type = Config.voca_random_test #가독성을 높이기 위해 변수로 만듦.``
 show_answer = Config.show_correct_answer
 voca = open("voca.txt", "r", encoding='UTF8').readlines()
 amount = len(voca)
@@ -35,7 +35,7 @@ print(test_type)
 print(amount)
 print(voca_list)
 
-if test_type == "random":
+if test_type == True:
     #랜덤시험
     random_num_list = []#random order create(code_test-list_random_number_sequence.py)
     while len(random_num_list) < amount:
@@ -75,7 +75,7 @@ if test_type == "random":
     
 
 #New bug! 단어 뜻이 한개일 경우 오답으로 표시됨.(fixed 2021/06/08 18:03)
-elif test_type == "straight": #complete(Now Cleaning code...)
+elif test_type == False: #complete(Now Cleaning code...)
     #순서대로
     for i in range(0, amount):
         count = 0
